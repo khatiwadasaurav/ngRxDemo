@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store'
-import { simpleReducer } from '../reducer/simple.reducer'
+import { languageReducer } from '../reducer/language.reducer'
 import { postReducer } from '../reducer/post.reducer'
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     StoreModule.forRoot(
       {
-        message: simpleReducer,
+        language: languageReducer,
         post: postReducer
       }
     )

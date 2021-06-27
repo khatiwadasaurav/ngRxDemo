@@ -3,10 +3,11 @@ import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs/internal/Observable';
 import { Post } from '../model/post'
 import * as PostActions from '../actions/post.actions'
+import * as TextAction from '../actions/text.actions'
 
 
 interface AppState {
-  message: string
+  language: string
   post: Post
 }
 @Component({
@@ -21,15 +22,18 @@ export class AppComponent {
 
 
   constructor(private store: Store<AppState>) {
-    this.message$ = this.store.select('message')
+    this.message$ = this.store.select('language')
     this.post$ = this.store.select('post')
   }
 
   spanishMessage() {
-    this.store.dispatch({ type: 'SPANISH' })
+    this.store.dispatch({ type: TextAction.SPANISH })
   }
   frenchMessage() {
-    this.store.dispatch({ type: 'FRENCH' })
+    this.store.dispatch({ type: TextAction.FRENCH })
+  }
+  nepaliMessage() {
+    this.store.dispatch({ type: TextAction.NEPALI })
   }
 
   editText() {

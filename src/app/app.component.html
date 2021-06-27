@@ -1,6 +1,7 @@
 <div class="container">
-  {{message$ | async}}
+  <h1 style="text-align: center;">{{message$ | async}}</h1>
   <div class="mini-container">
+    <button (click)="nepaliMessage()" class="baraRedButton">Nepali</button>
     <button (click)="spanishMessage()" class="blueButton">Spanish</button>
     <button (click)="frenchMessage()" class="greenButton">French</button>
     <hr>
